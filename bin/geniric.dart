@@ -8,6 +8,14 @@ T? firstElementReturn<T>(List<T> list) {
     return list.first;
 }
 
+// task 3
+
+T? elementAtOrNull<T>(List<T> list, int index) {
+  if(index < 0 || index >= list.length) return null;
+  return list[index];
+}
+
+
 void main() {
   // task 1
   double n1 = 12.7;
@@ -20,5 +28,11 @@ void main() {
   List list = [12, "String", 14.3];
   var result2 = firstElementReturn(list);
   print(result2);
+
+  // task 3
+  print('=======3======');
+List<int> list3 = [23, 34 , 65];
+ var result3 = elementAtOrNull(list3, 0);
+ print(result3);
 
 }
