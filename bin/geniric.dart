@@ -32,6 +32,19 @@ bool Function(T element) test
   return result;
 }
 
+// task 5
+List<R> mapGeniric<T, R>(
+    List<T> list,
+    R Function(T element) transform
+    ) {
+  final result = <R>[];
+
+  for(var element in list) {
+      result.add(transform(element));
+  }
+  return result;
+}
+
 void main() {
   // task 1
   double n1 = 12.7;
@@ -62,4 +75,9 @@ List<int> list3 = [23, 34 , 65];
 
   print('======= 5 =======');
 
+  final name = ['Vali', 'Ali', 'Abbos'];
+
+  var mapNameLength = mapGeniric(name,
+      (e) => e.length);
+print(mapNameLength);
 }
