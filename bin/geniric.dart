@@ -15,6 +15,22 @@ T? elementAtOrNull<T>(List<T> list, int index) {
   return list[index];
 }
 
+// task 4
+
+List<T> whereGeniric<T>(
+List<T> list,
+bool Function(T element) test
+) {
+  List<T> result = [];
+
+  for(var element in list) {
+    if(test(element)){
+      result.add(element);
+
+    }
+  }
+  return result;
+}
 
 void main() {
   // task 1
@@ -34,5 +50,16 @@ void main() {
 List<int> list3 = [23, 34 , 65];
  var result3 = elementAtOrNull(list3, 0);
  print(result3);
+
+  // task 4
+  print('=======4======');
+
+  List<int> num = [1, 2, 3,4,5,6];
+
+  var evenNum = whereGeniric(num,
+      (n) => n.isEven);
+  print(evenNum);
+
+  print('======= 5 =======');
 
 }
