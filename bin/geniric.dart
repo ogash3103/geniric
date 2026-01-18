@@ -45,6 +45,10 @@ List<R> mapGeniric<T, R>(
   return result;
 }
 
+// task 6
+
+
+
 void main() {
   // task 1
   double n1 = 12.7;
@@ -80,4 +84,7 @@ List<int> list3 = [23, 34 , 65];
   var mapNameLength = mapGeniric(name,
       (e) => e.length);
 print(mapNameLength);
+
+
+print('======= 6 ======');
 }
